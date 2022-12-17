@@ -8,21 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Ajr-2j-01P">
-            <objects>
-                <viewController storyboardIdentifier="deletedNotes" id="bor-8c-mGe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FQe-8c-6fd">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="q8y-ky-VSq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KtG-Nl-fZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="932" y="-677"/>
-        </scene>
         <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -256,6 +241,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hI-8H-vbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1780.916030534351" y="-27.464788732394368"/>
+        </scene>
+        <!--deletedNote-->
+        <scene sceneID="7sL-YM-ZQT">
+            <objects>
+                <viewController title="deletedNote" id="Jot-Lo-LiZ" customClass="deleteTableView" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8io-MF-c2l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OY5-XH-MYw" userLabel="Delete Table">
+                                <rect key="frame" x="4" y="63" width="385" height="751"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="noteCell" rowHeight="148" id="h9j-2g-WV9" customClass="noteCell" customModule="CRUDActivity" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="345" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h9j-2g-WV9" id="7b4-80-nhL">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFF-ex-q0b">
+                                                    <rect key="frame" x="42" y="11" width="52" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="pIu-vt-jkd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-r8-tJY">
+                                                    <rect key="frame" x="42" y="53" width="267" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="TTF-pj-nel"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKC-ih-C3u">
+                                                    <rect key="frame" x="287" y="15" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.978515625" green="0.9775390625" blue="0.9091796875" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xfI-r8-tJY" secondAttribute="trailing" constant="16" id="1lZ-bD-cNa"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zFF-ex-q0b" secondAttribute="trailing" id="IpM-nW-mL7"/>
+                                                <constraint firstItem="xfI-r8-tJY" firstAttribute="leading" secondItem="7b4-80-nhL" secondAttribute="leadingMargin" constant="22" id="Sqf-2D-Bwk"/>
+                                                <constraint firstItem="bKC-ih-C3u" firstAttribute="top" secondItem="7b4-80-nhL" secondAttribute="topMargin" constant="4" id="WtF-LM-ya7"/>
+                                                <constraint firstItem="xfI-r8-tJY" firstAttribute="top" secondItem="zFF-ex-q0b" secondAttribute="bottom" constant="8" id="Ya3-fB-eXu"/>
+                                                <constraint firstItem="zFF-ex-q0b" firstAttribute="leading" secondItem="7b4-80-nhL" secondAttribute="leadingMargin" constant="22" id="f2s-5E-UyB"/>
+                                                <constraint firstItem="bKC-ih-C3u" firstAttribute="trailing" secondItem="7b4-80-nhL" secondAttribute="trailingMargin" constant="4" id="gAZ-I9-8GG"/>
+                                                <constraint firstItem="zFF-ex-q0b" firstAttribute="top" secondItem="7b4-80-nhL" secondAttribute="topMargin" id="uu4-hM-yDp"/>
+                                                <constraint firstItem="bKC-ih-C3u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zFF-ex-q0b" secondAttribute="trailing" constant="8" symbolic="YES" id="z52-ih-LBY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dateLable" destination="bKC-ih-C3u" id="FO2-gG-N8E"/>
+                                            <outlet property="textLable" destination="xfI-r8-tJY" id="8l7-4L-SZ4"/>
+                                            <outlet property="titleLable" destination="zFF-ex-q0b" id="Cnm-AC-W1a"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aTq-Lh-6qK"/>
+                        <color key="backgroundColor" red="0.9229736328" green="0.8823242188" blue="0.8106689453" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                        <constraints>
+                            <constraint firstItem="aTq-Lh-6qK" firstAttribute="trailing" secondItem="OY5-XH-MYw" secondAttribute="trailing" constant="4" id="1Qe-ma-TH7"/>
+                            <constraint firstItem="aTq-Lh-6qK" firstAttribute="bottom" secondItem="OY5-XH-MYw" secondAttribute="bottom" constant="4" id="io4-n9-hTi"/>
+                            <constraint firstItem="OY5-XH-MYw" firstAttribute="top" secondItem="aTq-Lh-6qK" secondAttribute="top" constant="4" id="jzg-Z4-u29"/>
+                            <constraint firstItem="OY5-XH-MYw" firstAttribute="leading" secondItem="aTq-Lh-6qK" secondAttribute="leading" constant="4" id="kbb-WR-mar"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notes" id="g7U-yg-S4g">
+                        <barButtonItem key="leftBarButtonItem" image="trash" catalog="system" id="xfb-J4-mAy">
+                            <color key="tintColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="LcY-S2-Xel">
+                            <color key="tintColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="deletedNoteTable" destination="OY5-XH-MYw" id="GYc-c9-YmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ghu-Pb-fjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="-723"/>
         </scene>
     </scenes>
     <resources>
