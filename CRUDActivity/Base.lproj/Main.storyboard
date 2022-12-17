@@ -327,7 +327,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="deletedNoteTable" destination="OY5-XH-MYw" id="GYc-c9-YmJ"/>
+                        <outlet property="deletedNoteTable" destination="OY5-XH-MYw" id="fQz-k1-XYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghu-Pb-fjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
