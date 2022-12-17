@@ -4,6 +4,7 @@
 
 import UIKit
 import CoreData
+
 class notesTableView: UIViewController{
 
     @IBOutlet weak var notesTable: UITableView!
