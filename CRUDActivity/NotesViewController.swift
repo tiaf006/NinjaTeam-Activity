@@ -31,12 +31,18 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+        //descriptionTitle.backgroundColor = UIColor(patternImage: UIImage(named: "text")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
+      
         
     }
-
+    func setView(){
+        
+    }
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
-//        drawingView.frame = view.bounds
+//        drawingView. = view.bounds
 //    }
     
     @IBAction func addPhotoAction(_ sender: Any) {
