@@ -25,11 +25,11 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     @IBOutlet weak var drawingView: PKCanvasView!
     @IBOutlet weak var images: UIImageView!
     
- maram
+ 
     var index = IndexPath()
     weak var delg : noteDelegate?
 
- main
+
     //CoreData
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -40,7 +40,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     
     override func viewDidLoad() {
         super.viewDidLoad()
- maram
+ 
         
         //descriptionTitle.backgroundColor = UIColor(patternImage: UIImage(named: "text")!)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
@@ -67,7 +67,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
 
             view.addGestureRecognizer(tap)
         fetchAllItem()
- main
+ 
     }
     
     @objc func dismissKeyboard() {
@@ -132,7 +132,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     }
     
     @IBAction func saveAction(_ sender: Any) {
- maram
+ 
         print("Qqqqq!!!!!")
         saveNote()
         navigationController?.popToRootViewController(animated: true)
@@ -156,7 +156,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
             let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: self.managedObjectContext) as! Note
             note.noteTitle = noteTitle.text
             note.noteText = descriptionTitle.text
-            note.images = imageData
+            //note.images = imageData
             do{
                 try self.managedObjectContext.save()
             }catch {
@@ -176,7 +176,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
         } catch{
             print("\(error)")
         }
- main
+ 
     }
     
 }
