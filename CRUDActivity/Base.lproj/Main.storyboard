@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+ maram
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xh7-by-Ias">
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wvh-O7-pNd">
+ main
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -11,7 +15,7 @@
         <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="notesTableView" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="note" id="BYZ-38-t0r" customClass="notesTableView" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +130,7 @@
         <!--Item-->
         <scene sceneID="gsf-FI-pKc">
             <objects>
-                <viewController id="Wvh-O7-pNd" customClass="NotesViewController" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editOrAddNote" id="Wvh-O7-pNd" customClass="NotesViewController" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3y3-Do-WeK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,6 +202,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-Cy-5N5">
                                 <rect key="frame" x="4" y="105.33333333333334" width="385" height="455.66666666666663"/>
                                 <color key="backgroundColor" red="0.978515625" green="0.9775390625" blue="0.9091796875" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                                <color key="tintColor" red="0.978515625" green="0.9775390625" blue="0.9091796875" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <color key="textColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -211,7 +216,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nIg-h8-hu3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.924987793" green="0.8849487305" blue="0.8138427734" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                         <constraints>
                             <constraint firstItem="O3v-FD-uc0" firstAttribute="top" secondItem="nIg-h8-hu3" secondAttribute="top" constant="4" id="2gp-CF-Yxq"/>
                             <constraint firstAttribute="bottom" secondItem="CL0-UW-cdK" secondAttribute="bottom" constant="54" id="4hy-oB-Qtd"/>
@@ -237,7 +242,9 @@
                             <constraint firstItem="OSJ-TA-POV" firstAttribute="leading" secondItem="nIg-h8-hu3" secondAttribute="leading" constant="16" id="sR8-Mw-ZrB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0JF-rP-c2Q"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="0JF-rP-c2Q">
+                        <color key="badgeColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -258,7 +265,7 @@
         <!--deletedNote-->
         <scene sceneID="7sL-YM-ZQT">
             <objects>
-                <viewController title="deletedNote" id="Jot-Lo-LiZ" customClass="deleteTableView" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dN" title="deletedNote" id="Jot-Lo-LiZ" customClass="deleteTableView" customModule="CRUDActivity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8io-MF-c2l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,14 +338,7 @@
                             <constraint firstItem="OY5-XH-MYw" firstAttribute="leading" secondItem="aTq-Lh-6qK" secondAttribute="leading" constant="4" id="kbb-WR-mar"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notes" id="g7U-yg-S4g">
-                        <barButtonItem key="leftBarButtonItem" image="trash" catalog="system" id="xfb-J4-mAy">
-                            <color key="tintColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="LcY-S2-Xel">
-                            <color key="tintColor" red="0.1147689819" green="0.322052002" blue="0.3229064941" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Deleted Notes" id="g7U-yg-S4g"/>
                     <connections>
                         <outlet property="deletedNoteTable" destination="OY5-XH-MYw" id="fQz-k1-XYx"/>
                     </connections>

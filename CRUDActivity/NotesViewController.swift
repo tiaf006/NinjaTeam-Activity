@@ -3,6 +3,12 @@
 //  NotesViewController.swift
 //  CRUDActivity
 
+protocol noteDelegate: AnyObject{
+    func saveAdd(_ title: String, _ description: String)
+    func saveEdit(_  indexPath: NSIndexPath?,_ title: String, _ description: String)
+
+}
+
 import UIKit
 import CoreData
 import PencilKit
@@ -19,6 +25,11 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     @IBOutlet weak var drawingView: PKCanvasView!
     @IBOutlet weak var images: UIImageView!
     
+ maram
+    var index = IndexPath()
+    weak var delg : noteDelegate?
+
+ main
     //CoreData
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -29,11 +40,34 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ maram
+        
+        //descriptionTitle.backgroundColor = UIColor(patternImage: UIImage(named: "text")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
+      
+        
+    }
+    func saveNote(){
+        print(";;;;;;;;")
+        let title = noteTitle.text!
+        let describtion = descriptionTitle.text!
+        
+        if save.tag == 1{
+            print(";;;;;;;;add")
+            delg?.saveAdd(title, describtion)
+            print("uuii")
+        }
+        else if save.tag == 0{
+            print(";;;;;;;;edit")
+            delg?.saveEdit(index as NSIndexPath, title, describtion)
+        }
+
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
 
             view.addGestureRecognizer(tap)
         fetchAllItem()
+ main
     }
     
     @objc func dismissKeyboard() {
@@ -98,6 +132,26 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     }
     
     @IBAction func saveAction(_ sender: Any) {
+ maram
+        print("Qqqqq!!!!!")
+        saveNote()
+        navigationController?.popToRootViewController(animated: true)
+               // if noteTitle.text != ""{
+//            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: self.managedObjectContext) as! Note
+//
+//            note.noteTitle = noteTitle.text
+//            note.noteText = descriptionTitle.text
+//
+//            do{
+//                try self.managedObjectContext.save()
+//            }catch {
+//                print("\(error)")
+//            }
+//            self.noteArray.append(note)
+//        }else{
+        
+//        }
+
         if noteTitle.text != ""{
             let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: self.managedObjectContext) as! Note
             note.noteTitle = noteTitle.text
@@ -122,6 +176,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
         } catch{
             print("\(error)")
         }
+ main
     }
     
 }
