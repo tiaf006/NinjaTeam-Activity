@@ -18,6 +18,7 @@
 		03E51FBB294E3E0900C47700 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E51FBA294E3E0900C47700 /* NotesViewController.swift */; };
 		4FAB40DC294E55C500367847 /* deleteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB40DB294E55C500367847 /* deleteTableView.swift */; };
 		B172A9E8294EA9A9004FA4A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B172A9E7294EA9A9004FA4A0 /* Main.storyboard */; };
+		B172A9EA294EE62A004FA4A0 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172A9E9294EE62A004FA4A0 /* view.swift */; };
 		B1C2EE55294DD3AC006785B4 /* notesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1C2EE53294DD3AC006785B4 /* notesModel.xcdatamodeld */; };
 		B1C2EE57294DE9D7006785B4 /* noteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2EE56294DE9D7006785B4 /* noteCell.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		03E51FBA294E3E0900C47700 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		4FAB40DB294E55C500367847 /* deleteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteTableView.swift; sourceTree = "<group>"; };
 		B172A9E7294EA9A9004FA4A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B172A9E9294EE62A004FA4A0 /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
 		B1C2EE54294DD3AC006785B4 /* notesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = notesModel.xcdatamodel; sourceTree = "<group>"; };
 		B1C2EE56294DE9D7006785B4 /* noteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				035D9CD3294D094900B962E2 /* notesTableView.swift */,
 				03E51FBA294E3E0900C47700 /* NotesViewController.swift */,
 				B172A9E7294EA9A9004FA4A0 /* Main.storyboard */,
+				B172A9E9294EE62A004FA4A0 /* view.swift */,
 				4FAB40DB294E55C500367847 /* deleteTableView.swift */,
 				B1C2EE56294DE9D7006785B4 /* noteCell.swift */,
 				035D9CD8294D094C00B962E2 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B172A9EA294EE62A004FA4A0 /* view.swift in Sources */,
 				035D9CD4294D094900B962E2 /* notesTableView.swift in Sources */,
 				4FAB40DC294E55C500367847 /* deleteTableView.swift in Sources */,
 				B1C2EE55294DD3AC006785B4 /* notesModel.xcdatamodeld in Sources */,
