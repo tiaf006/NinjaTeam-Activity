@@ -25,19 +25,22 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     @IBOutlet weak var drawingView: PKCanvasView!
     @IBOutlet weak var images: UIImageView!
     
+ maram
     var index = IndexPath()
     weak var delg : noteDelegate?
+
+ main
     //CoreData
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    //variables
     var noteArray : [Note] = []
     var imageData = Data()
     var isDrawing = true
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+ maram
         
         //descriptionTitle.backgroundColor = UIColor(patternImage: UIImage(named: "text")!)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
@@ -58,12 +61,19 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
             print(";;;;;;;;edit")
             delg?.saveEdit(index as NSIndexPath, title, describtion)
         }
+
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+
+            view.addGestureRecognizer(tap)
+        fetchAllItem()
+ main
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        drawingView. = view.bounds
-//    }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     @IBAction func addPhotoAction(_ sender: Any) {
         let addImage = UITapGestureRecognizer(target: self, action: #selector(addImage))
         addPhoto.addGestureRecognizer(addImage)
@@ -87,29 +97,26 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
             dismiss(animated: true, completion: nil)
         }
     
-    
     @IBAction func writeAction(_ sender: Any) {
-//        if descriptionTitle.isHidden{
-//            descriptionTitle.isHidden = false
-//            drawingView.isHidden = true
-//        }else{
-//            descriptionTitle.isHidden = true
-//            drawingView.isHidden = false
-//            drawingView.delegate = self
-////            drawingView.drawing = PKDrawing()
-//            drawingView.drawingPolicy = PKCanvasViewDrawingPolicy.anyInput
-//            drawingView.becomeFirstResponder()
-//            showDrawing(isDrawing)
-//        }
-//        isDrawing = !isDrawing
+        if descriptionTitle.isHidden{
+            descriptionTitle.isHidden = false
+            drawingView.isHidden = true
+        }else{
+            descriptionTitle.isHidden = true
+            drawingView.isHidden = false
+            drawingView.delegate = self
+            drawingView.drawing = PKDrawing()
+            drawingView.drawingPolicy = .anyInput
+            showDrawing(isDrawing)
+        }
     }
     
-//    func showDrawing(_ isShowDrawing : Bool){
-//        let toolPicker = PKToolPicker()
-//         toolPicker.setVisible(isShowDrawing, forFirstResponder: drawingView)
-//         toolPicker.addObserver(drawingView)
-////         drawingView.becomeFirstResponder()
-//    }
+    func showDrawing(_ isShowDrawing : Bool){
+        let toolPicker = PKToolPicker()
+            toolPicker.setVisible(isShowDrawing, forFirstResponder: drawingView)
+            toolPicker.addObserver(drawingView)
+    }
+
     
     @IBAction func alignmentTextAction(_ sender: Any) {
         if descriptionTitle.textAlignment == .center{
@@ -125,6 +132,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     }
     
     @IBAction func saveAction(_ sender: Any) {
+ maram
         print("Qqqqq!!!!!")
         saveNote()
         navigationController?.popToRootViewController(animated: true)
@@ -143,6 +151,32 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
 //        }else{
         
 //        }
+
+        if noteTitle.text != ""{
+            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: self.managedObjectContext) as! Note
+            note.noteTitle = noteTitle.text
+            note.noteText = descriptionTitle.text
+            note.images = imageData
+            do{
+                try self.managedObjectContext.save()
+            }catch {
+                print("\(error)")
+            }
+            self.noteArray.append(note)
+        }else{
+            dismiss(animated: true)
+        }
+    }
+    
+    func fetchAllItem(){
+        let requesr = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        do{
+            let result = try managedObjectContext.fetch(requesr)
+            noteArray = result as! [Note]
+        } catch{
+            print("\(error)")
+        }
+ main
     }
     
 }
