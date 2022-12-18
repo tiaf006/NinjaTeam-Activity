@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xh7-by-Ias">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xh7-by-Ias">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -195,7 +195,7 @@
                                     <constraint firstAttribute="height" constant="125" id="9Za-GT-ld9"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" Write here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-Cy-5N5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-Cy-5N5">
                                 <rect key="frame" x="4" y="105.33333333333334" width="385" height="455.66666666666663"/>
                                 <color key="backgroundColor" red="0.978515625" green="0.9775390625" blue="0.9091796875" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                                 <color key="tintColor" red="0.978515625" green="0.9775390625" blue="0.9091796875" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
@@ -203,17 +203,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAN-1S-3yi" customClass="PKCanvasView">
+                                <rect key="frame" x="4" y="105.33333333333331" width="385" height="613.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nIg-h8-hu3"/>
                         <color key="backgroundColor" red="0.924987793" green="0.8849487305" blue="0.8138427734" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                         <constraints>
                             <constraint firstItem="O3v-FD-uc0" firstAttribute="top" secondItem="nIg-h8-hu3" secondAttribute="top" constant="4" id="2gp-CF-Yxq"/>
                             <constraint firstAttribute="bottom" secondItem="CL0-UW-cdK" secondAttribute="bottom" constant="54" id="4hy-oB-Qtd"/>
+                            <constraint firstItem="uAN-1S-3yi" firstAttribute="top" secondItem="O3v-FD-uc0" secondAttribute="bottom" constant="8" id="4qu-GY-BFk"/>
                             <constraint firstItem="nIg-h8-hu3" firstAttribute="trailing" secondItem="O3v-FD-uc0" secondAttribute="trailing" constant="4" id="6Vo-Vl-Jfq"/>
                             <constraint firstItem="1Ge-OA-HaO" firstAttribute="leading" secondItem="CL0-UW-cdK" secondAttribute="trailing" constant="4" id="7Hc-wk-Wpn"/>
+                            <constraint firstItem="uAN-1S-3yi" firstAttribute="leading" secondItem="nIg-h8-hu3" secondAttribute="leading" constant="4" id="84L-qe-dqf"/>
                             <constraint firstItem="9Js-OL-oVy" firstAttribute="top" secondItem="EG1-pJ-D10" secondAttribute="bottom" constant="16" id="9jK-6V-11I"/>
                             <constraint firstAttribute="bottom" secondItem="9Js-OL-oVy" secondAttribute="bottom" constant="54" id="ALZ-8A-RG3"/>
                             <constraint firstItem="mRU-Cy-5N5" firstAttribute="leading" secondItem="nIg-h8-hu3" secondAttribute="leading" constant="4" id="Jre-QA-cpe"/>
+                            <constraint firstItem="nIg-h8-hu3" firstAttribute="bottom" secondItem="uAN-1S-3yi" secondAttribute="bottom" constant="50" id="LxQ-m0-NIZ"/>
                             <constraint firstItem="mRU-Cy-5N5" firstAttribute="top" secondItem="O3v-FD-uc0" secondAttribute="bottom" constant="8" id="Tty-B1-c5o"/>
                             <constraint firstItem="EG1-pJ-D10" firstAttribute="leading" secondItem="nIg-h8-hu3" secondAttribute="leading" constant="72" id="Upb-4S-sZ6"/>
                             <constraint firstItem="EG1-pJ-D10" firstAttribute="top" secondItem="mRU-Cy-5N5" secondAttribute="bottom" constant="16" id="Vac-Hh-7Z1"/>
@@ -221,6 +228,7 @@
                             <constraint firstItem="O3v-FD-uc0" firstAttribute="leading" secondItem="OSJ-TA-POV" secondAttribute="trailing" constant="16" id="d3p-co-a9S"/>
                             <constraint firstAttribute="bottom" secondItem="1Ge-OA-HaO" secondAttribute="bottom" constant="54" id="lFg-y3-0JZ"/>
                             <constraint firstItem="nIg-h8-hu3" firstAttribute="trailing" secondItem="EG1-pJ-D10" secondAttribute="trailing" constant="72" id="nL4-5q-Q5k"/>
+                            <constraint firstItem="nIg-h8-hu3" firstAttribute="trailing" secondItem="uAN-1S-3yi" secondAttribute="trailing" constant="4" id="nc9-2c-fVL"/>
                             <constraint firstItem="nIg-h8-hu3" firstAttribute="trailing" secondItem="1Ge-OA-HaO" secondAttribute="trailing" constant="72" id="qMy-20-TkX"/>
                             <constraint firstItem="OSJ-TA-POV" firstAttribute="top" secondItem="nIg-h8-hu3" secondAttribute="top" constant="4" id="qWZ-mp-Z8g"/>
                             <constraint firstItem="nIg-h8-hu3" firstAttribute="trailing" secondItem="mRU-Cy-5N5" secondAttribute="trailing" constant="4" id="qon-al-bja"/>
@@ -236,6 +244,7 @@
                         <outlet property="addPhoto" destination="9Js-OL-oVy" id="XUW-Vc-hka"/>
                         <outlet property="alignmentText" destination="CL0-UW-cdK" id="mdd-tX-8CH"/>
                         <outlet property="descriptionTitle" destination="mRU-Cy-5N5" id="Gcq-Ze-FOk"/>
+                        <outlet property="drawingView" destination="uAN-1S-3yi" id="wPb-x4-lGe"/>
                         <outlet property="images" destination="EG1-pJ-D10" id="bzF-p7-dhV"/>
                         <outlet property="noteTitle" destination="OSJ-TA-POV" id="dc1-VB-gV8"/>
                         <outlet property="save" destination="1Ge-OA-HaO" id="1pY-mq-C9V"/>
