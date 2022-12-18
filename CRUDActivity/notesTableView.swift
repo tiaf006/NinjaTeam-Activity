@@ -146,7 +146,7 @@ extension notesTableView: UITableViewDelegate, UITableViewDataSource{
         formatter.dateStyle = .short
         let date = Date()
         let DateString = formatter.string(from: date )
-        note.createdDate = formatter.date(from: DateString)
+        note.createdDate! = formatter.date(from: DateString)!
            print("appenddddddd")
          managedObjectContext.insert(note)
          notes.append(note)

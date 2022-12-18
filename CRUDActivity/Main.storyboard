@@ -236,6 +236,7 @@
                         <outlet property="addPhoto" destination="9Js-OL-oVy" id="XUW-Vc-hka"/>
                         <outlet property="alignmentText" destination="CL0-UW-cdK" id="mdd-tX-8CH"/>
                         <outlet property="descriptionTitle" destination="mRU-Cy-5N5" id="Gcq-Ze-FOk"/>
+                        <outlet property="images" destination="EG1-pJ-D10" id="bzF-p7-dhV"/>
                         <outlet property="noteTitle" destination="OSJ-TA-POV" id="dc1-VB-gV8"/>
                         <outlet property="save" destination="1Ge-OA-HaO" id="1pY-mq-C9V"/>
                         <outlet property="write" destination="O3v-FD-uc0" id="b5p-0R-rd2"/>
