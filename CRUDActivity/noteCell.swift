@@ -13,7 +13,7 @@ class noteCell: UITableViewCell {
     @IBOutlet weak var textLable: UILabel!
     @IBOutlet weak var dateLable: UILabel!
     
-    
+   
   
     override func awakeFromNib() {
         super.awakeFromNib()

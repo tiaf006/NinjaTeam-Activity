@@ -3,6 +3,12 @@
 //  NotesViewController.swift
 //  CRUDActivity
 
+protocol noteDelegate: AnyObject{
+    func saveAdd(_ title: String, _ description: String)
+    func saveEdit(_  indexPath: NSIndexPath?,_ title: String, _ description: String)
+
+}
+
 import UIKit
 import CoreData
 import PencilKit
@@ -19,7 +25,8 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     @IBOutlet weak var drawingView: PKCanvasView!
     @IBOutlet weak var images: UIImageView!
     
-    
+    var index = IndexPath()
+    weak var delg : noteDelegate?
     //CoreData
     let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -31,14 +38,26 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        
         //descriptionTitle.backgroundColor = UIColor(patternImage: UIImage(named: "text")!)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bb")!)
       
         
     }
-    func setView(){
+    func saveNote(){
+        print(";;;;;;;;")
+        let title = noteTitle.text!
+        let describtion = descriptionTitle.text!
         
+        if save.tag == 1{
+            print(";;;;;;;;add")
+            delg?.saveAdd(title, describtion)
+            print("uuii")
+        }
+        else if save.tag == 0{
+            print(";;;;;;;;edit")
+            delg?.saveEdit(index as NSIndexPath, title, describtion)
+        }
     }
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
@@ -106,7 +125,10 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
     }
     
     @IBAction func saveAction(_ sender: Any) {
-//        if noteTitle.text != ""{
+        print("Qqqqq!!!!!")
+        saveNote()
+        navigationController?.popToRootViewController(animated: true)
+               // if noteTitle.text != ""{
 //            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: self.managedObjectContext) as! Note
 //
 //            note.noteTitle = noteTitle.text
@@ -119,7 +141,7 @@ class NotesViewController: UIViewController, UIImagePickerControllerDelegate,  U
 //            }
 //            self.noteArray.append(note)
 //        }else{
-//            dismiss(animated: true)
+        
 //        }
     }
     
